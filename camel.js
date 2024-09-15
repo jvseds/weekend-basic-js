@@ -3,13 +3,14 @@ function toCamelCase (str) {
         return `can't convert ${typeof str} to camel case!`;
     }
     if (str.length <= 1) {
-        return str.toUpperCase;
+        return str.toUpperCase();
     }
     let strArray = str.split("_");
-    for (let word of strArray) {
-        word = word.replace(word[0], word[0].toUpperCase());
-        console.log(word);
+    for (let i = 1; i < strArray.length; i++) {
+        strArray[i] = strArray[i].replace(strArray[i][0], strArray[i][0].toUpperCase());
+        console.log(strArray[i]);
     }
+    console.log(strArray);
     const camelStr = strArray.join("");
     return camelStr;
 }
